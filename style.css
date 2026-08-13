@@ -6,19 +6,22 @@
 
 
 :root {
-    --ink: #12151A;
-    --ink-soft: #1B2027;
-    --ivory: #EDEAE2;
-    --ivory-dim: #9AA0AC;
+    --ink: #071421;
+    --ink-soft: #101d2b;
 
-    --gold: #C9A25C;
-    --gold-soft: #8A7247;
+    --ivory: #F4F7FB;
+    --ivory-dim: #91A6B9;
 
-    --line: #2B313B;
+    --blue: #159CFF;
+    --blue-soft: #0878C9;
+
+    --line: rgba(70,145,200,0.25);
 }
 
 
-/* RESET */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -27,25 +30,39 @@
 }
 
 
-/* BODY */
+/* =========================================================
+   BODY / BACKGROUND
+   ========================================================= */
 
 html,
 body {
 
-    background: var(--ink);
+    width: 100%;
+    height: 100%;
 
     color: var(--ivory);
 
     font-family: 'Inter', sans-serif;
 
-    height: 100%;
-    width: 100%;
-
     overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(2, 15, 28, 0.55),
+            rgba(2, 15, 28, 0.68)
+        ),
+        url("images.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
-/* BACKGROUND DOTS */
+/* =========================================================
+   BACKGROUND DOTS
+   ========================================================= */
 
 body::before {
 
@@ -70,7 +87,9 @@ body::before {
 }
 
 
-/* MAIN */
+/* =========================================================
+   MAIN
+   ========================================================= */
 
 .stage {
 
@@ -84,18 +103,18 @@ body::before {
     display: grid;
 
     grid-template-columns:
-        minmax(240px, 38%)
+        minmax(300px, 38%)
         1px
-        1fr;
+        minmax(500px, 1fr);
 
     align-items: center;
 
     padding:
         0
-        clamp(24px, 5vw, 72px);
+        clamp(30px, 5vw, 72px);
 
     gap:
-        clamp(24px, 4vw, 56px);
+        clamp(30px, 4vw, 56px);
 
     z-index: 1;
 }
@@ -115,27 +134,32 @@ body::before {
 
     align-items: flex-start;
 
-    padding-left: 8px;
+    padding-left: 44px;
 }
 
 
-/* TREE */
+/* =========================================================
+   TREE
+   ========================================================= */
 
 #tree-svg {
 
     position: absolute;
 
     top: 50%;
-    left: -8px;
+
+    left: -15px;
 
     transform: translateY(-50%);
 
-    width: 120px;
+    width: 150px;
     height: 220px;
 
     overflow: visible;
 
     pointer-events: none;
+
+    z-index: 1;
 }
 
 
@@ -143,18 +167,31 @@ body::before {
 
     fill: none;
 
-    stroke: var(--gold);
+    stroke: var(--blue);
 
-    stroke-width: 1.4;
+    stroke-width: 2;
 
     stroke-linecap: round;
+
+    stroke-linejoin: round;
 
     stroke-dasharray: 700;
 
     stroke-dashoffset: 700;
 
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(21,156,255,0.85)
+        )
+        drop-shadow(
+            0 0 12px
+            rgba(21,156,255,0.30)
+        );
+
     animation:
-        draw 1.8s cubic-bezier(.65,0,.35,1)
+        draw 1.8s
+        cubic-bezier(.65,0,.35,1)
         forwards;
 }
 
@@ -164,7 +201,6 @@ body::before {
     to {
         stroke-dashoffset: 0;
     }
-
 }
 
 
@@ -174,25 +210,29 @@ body::before {
 
 .avatar {
 
-    width: 96px;
-    height: 96px;
+    position: relative;
 
-    margin-left: 44px;
+    z-index: 3;
+
+    width: 150px;
+    height: 150px;
+
+    margin-left: 0;
 
     border-radius: 50%;
 
     overflow: hidden;
 
-    background:
-        linear-gradient(
-            160deg,
-            #2A2F3A,
-            #171B21
-        );
+    background: #071421;
+
+    border:
+        2px solid
+        var(--blue);
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     opacity: 0;
@@ -203,12 +243,21 @@ body::before {
     animation-delay: 1.55s;
 
     box-shadow:
-        0 0 0 1px var(--line),
-        0 20px 40px -12px rgba(0,0,0,0.6);
+
+        0 0 0 4px
+        rgba(21,156,255,0.12),
+
+        0 0 30px
+        rgba(21,156,255,0.25),
+
+        0 20px 45px
+        rgba(0,0,0,0.60);
 }
 
 
-/* LOGO IMAGE */
+/* =========================================================
+   LOGO IMAGE
+   ========================================================= */
 
 .avatar img {
 
@@ -229,14 +278,18 @@ body::before {
 
     margin-top: 20px;
 
-    margin-left: 44px;
+    margin-left: 0;
 
-    font-family: 'Fraunces', serif;
+    font-family:
+        'Fraunces',
+        serif;
 
-    font-weight: 500;
+    font-weight: 600;
 
     font-size:
-        clamp(28px, 3vw, 40px);
+        clamp(32px, 3vw, 42px);
+
+    color: #FFFFFF;
 
     letter-spacing: 0.01em;
 
@@ -248,20 +301,26 @@ body::before {
     animation-delay: 1.75s;
 
     white-space: nowrap;
+
+    text-shadow:
+        0 0 20px
+        rgba(21,156,255,0.10);
 }
 
 
-/* TAGLINE */
+/* =========================================================
+   TAGLINE
+   ========================================================= */
 
 .tagline {
 
     margin-top: 8px;
 
-    margin-left: 44px;
+    margin-left: 0;
 
     font-size: 12px;
 
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
 
     text-transform: uppercase;
 
@@ -276,7 +335,9 @@ body::before {
 }
 
 
-/* ANIMATION */
+/* =========================================================
+   FADE ANIMATION
+   ========================================================= */
 
 @keyframes fadeUp {
 
@@ -307,14 +368,21 @@ body::before {
     width: 1px;
 
     height:
-        min(70%, 320px);
+        min(70%, 430px);
 
     background:
+
         linear-gradient(
             to bottom,
+
             transparent,
-            var(--line) 20%,
-            var(--line) 80%,
+
+            rgba(70,145,200,0.20) 15%,
+
+            rgba(70,145,200,0.35) 50%,
+
+            rgba(70,145,200,0.20) 85%,
+
             transparent
         );
 
@@ -333,18 +401,22 @@ body::before {
 
 .links {
 
+    width: 100%;
+
+    max-width: 850px;
+
     display: grid;
 
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    gap: 12px;
-
-    max-width: 640px;
+    gap: 16px;
 }
 
 
-/* LINK CARD */
+/* =========================================================
+   LINK CARD
+   ========================================================= */
 
 .leaf {
 
@@ -354,16 +426,23 @@ body::before {
 
     align-items: center;
 
-    gap: 14px;
+    gap: 16px;
 
-    padding: 14px 18px;
+    min-height: 108px;
+
+    padding:
+        18px 22px;
 
     background:
-        var(--ink-soft);
+        rgba(15,27,40,0.90);
 
-    border: 1px solid var(--line);
+    border:
+        1px solid
+        rgba(70,145,200,0.22);
 
-    border-radius: 14px;
+    border-radius: 16px;
+
+    backdrop-filter: blur(8px);
 
     text-decoration: none;
 
@@ -380,35 +459,47 @@ body::before {
         forwards;
 
     transition:
+
         border-color .25s ease,
+
         background .25s ease,
+
         transform .2s ease,
+
         box-shadow .25s ease;
 
     min-width: 0;
 }
 
 
-/* HOVER */
+/* =========================================================
+   HOVER
+   ========================================================= */
 
 .leaf:hover {
 
     border-color:
-        var(--gold-soft);
+        rgba(21,156,255,0.75);
 
     background:
-        #20262F;
+        rgba(17,39,59,0.96);
 
     transform:
         translateY(-3px);
 
     box-shadow:
+
+        0 0 25px
+        rgba(21,156,255,0.12),
+
         0 10px 30px
-        rgba(0,0,0,0.25);
+        rgba(0,0,0,0.30);
 }
 
 
-/* CLICK */
+/* =========================================================
+   CLICK
+   ========================================================= */
 
 .leaf:active {
 
@@ -418,7 +509,9 @@ body::before {
 }
 
 
-/* LINK ANIMATION */
+/* =========================================================
+   LINK ANIMATION
+   ========================================================= */
 
 @keyframes leafIn {
 
@@ -432,7 +525,9 @@ body::before {
 }
 
 
-/* STAGGER */
+/* =========================================================
+   STAGGER
+   ========================================================= */
 
 .links .leaf:nth-child(1) {
     animation-delay: 2.0s;
@@ -467,22 +562,26 @@ body::before {
 
     flex: none;
 
-    width: 46px;
-    height: 46px;
+    width: 62px;
+    height: 62px;
 
-    border-radius: 10px;
+    border-radius: 14px;
 
     object-fit: cover;
 
     display: block;
 
     transition:
+
         transform .25s ease,
+
         box-shadow .25s ease;
 }
 
 
-/* ICON HOVER */
+/* =========================================================
+   ICON HOVER
+   ========================================================= */
 
 .leaf:hover .social-icon {
 
@@ -490,12 +589,15 @@ body::before {
         scale(1.08);
 
     box-shadow:
+
         0 5px 15px
         rgba(0,0,0,0.35);
 }
 
 
-/* TEXT */
+/* =========================================================
+   TEXT
+   ========================================================= */
 
 .leaf .text {
 
@@ -503,7 +605,7 @@ body::before {
 
     flex-direction: column;
 
-    gap: 3px;
+    gap: 5px;
 
     min-width: 0;
 
@@ -511,13 +613,15 @@ body::before {
 }
 
 
-/* TITLE */
+/* =========================================================
+   TITLE
+   ========================================================= */
 
 .leaf .label {
 
-    font-size: 14px;
+    font-size: 17px;
 
-    font-weight: 500;
+    font-weight: 600;
 
     letter-spacing: 0.01em;
 
@@ -529,11 +633,13 @@ body::before {
 }
 
 
-/* SUBTITLE */
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
 
 .leaf .sub {
 
-    font-size: 11px;
+    font-size: 13px;
 
     color: var(--ivory-dim);
 
@@ -564,11 +670,11 @@ footer {
 
     font-size: 10px;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
 
     text-transform: uppercase;
 
-    color: #5B616D;
+    color: #62788B;
 
     opacity: 0;
 
@@ -577,7 +683,7 @@ footer {
 
     animation-delay: 2.8s;
 
-    z-index: 1;
+    z-index: 5;
 }
 
 
@@ -589,7 +695,10 @@ footer {
 
     html,
     body {
+
         overflow: auto;
+
+        background-attachment: scroll;
     }
 
 
@@ -603,13 +712,15 @@ footer {
             auto;
 
         padding:
-            32px
+            40px
             24px
-            60px;
+            70px;
 
         height: auto;
 
         min-height: 100vh;
+
+        gap: 30px;
     }
 
 
@@ -618,6 +729,8 @@ footer {
         align-items: center;
 
         padding-left: 0;
+
+        text-align: center;
     }
 
 
@@ -628,6 +741,9 @@ footer {
 
 
     .avatar {
+
+        width: 140px;
+        height: 140px;
 
         margin-left: 0;
     }
@@ -642,6 +758,12 @@ footer {
     }
 
 
+    .name {
+
+        font-size: 38px;
+    }
+
+
     .divider {
 
         width:
@@ -650,11 +772,18 @@ footer {
         height: 1px;
 
         background:
+
             linear-gradient(
                 to right,
+
                 transparent,
-                var(--line) 20%,
-                var(--line) 80%,
+
+                rgba(70,145,200,0.25) 20%,
+
+                rgba(70,145,200,0.35) 50%,
+
+                rgba(70,145,200,0.25) 80%,
+
                 transparent
             );
 
@@ -709,33 +838,42 @@ footer {
         transition: none !important;
     }
 }
-.avatar {
+
+#tree-svg {
+    position: absolute;
+
+    top: 30%;
+    left: -75px;   /* pehle -105px tha */
+
+    transform: translateY(-50%);
+
     width: 150px;
     height: 150px;
-    margin-left: 44px;
 
-    border-radius: 50%;
-    overflow: hidden;
+    overflow: visible;
+    pointer-events: none;
 
-    background: #171B21;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    opacity: 0;
-
-    animation: fadeUp .7s ease forwards;
-    animation-delay: 1.55s;
-
-    box-shadow:
-        0 0 0 1px var(--line),
-        0 20px 40px -12px rgba(0,0,0,0.6);
+    z-index: 1;
 }
 
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+
+.trunk-path {
+    fill: none;
+
+    stroke: var(--blue);
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+
+    filter:
+        drop-shadow(0 0 5px rgba(21,156,255,0.85))
+        drop-shadow(0 0 12px rgba(21,156,255,0.30));
+
+    animation:
+        draw 1.8s cubic-bezier(.65,0,.35,1) forwards;
 }
