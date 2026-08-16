@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    font-family: "Baloo Tamma 2", sans-serif;
+    background: #f9db13;
+}
+
+.navigation{
+    background: #222;
+    border-top:2px solid #f2a900;
+    padding: 12px 40px !important;
+}
+
+.brand-logo{
+    height: 26px;
+    width: auto;
+}
+
+.navigation-link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff !important;
+}
+
+.navigation-link:hover {
+    color: #f2a900 !important;
+}
+
+.about{
+    background-color: rgba(0, 0,0, 0.6);
+    border-radius: 15px;
+    margin-top: 50px;
+}
+
+.m-heading{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.btn-outline-warning {
+    border-width: 2px;
+    font-weight: 600;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+}
+
+#social-media{
+    background:#2f3550;
+}
+
+.m-heading{
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+.media_link{
+    border: 2px solid #f2a900;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin-right: 18px;
+    background: transparent;
+    text-align: left;
+}
+
+.row.pt-5{
+    gap: 18px;
+}
+
+.media_link h3{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.media_link i{
+    font-size: 22px;
+}
+
+.media_link.bg-warning{
+    border: 2px solid #f2a900;
+}
