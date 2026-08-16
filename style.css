@@ -209,30 +209,23 @@ body::before {
    ========================================================= */
 
 .avatar {
-
     position: relative;
-
     z-index: 3;
 
-    width: 150px;
-    height: 150px;
+    width: 185px;
+    height: 185px;
 
     margin-left: 0;
 
     border-radius: 50%;
-
     overflow: hidden;
 
     background: #071421;
 
-    border:
-        2px solid
-        var(--blue);
+    border: 2px solid var(--blue);
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     opacity: 0;
@@ -243,32 +236,17 @@ body::before {
     animation-delay: 1.55s;
 
     box-shadow:
-
-        0 0 0 4px
-        rgba(21,156,255,0.12),
-
-        0 0 30px
-        rgba(21,156,255,0.25),
-
-        0 20px 45px
-        rgba(0,0,0,0.60);
+        0 0 0 5px rgba(21,156,255,0.12),
+        0 0 35px rgba(21,156,255,0.30),
+        0 20px 45px rgba(0,0,0,0.60);
 }
-
-
-/* =========================================================
-   LOGO IMAGE
-   ========================================================= */
 
 .avatar img {
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
-
 
 /* =========================================================
    NAME
@@ -551,6 +529,14 @@ body::before {
 
 .links .leaf:nth-child(6) {
     animation-delay: 2.5s;
+}
+
+.links .leaf:nth-child(7) {
+    animation-delay: 2.6s;
+}
+
+.links .leaf:nth-child(8) {
+    animation-delay: 2.7s;
 }
 
 
@@ -1172,4 +1158,229 @@ footer {
     .navigation .col-3 {
         padding: 0 10px;
     }
+}
+
+/* =========================================================
+   WEBSITE SCROLL EFFECT
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* Main website area */
+.stage {
+    min-height: 100vh;
+    height: auto;
+
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+
+/* Smooth card movement while scrolling */
+.leaf {
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Hover effect */
+.leaf:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+   ========================================================= */
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #071421;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-soft);
+}
+
+/* =========================================================
+   DARK / LIGHT MODE
+   ========================================================= */
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid rgba(21, 156, 255, 0.4);
+    border-radius: 50%;
+
+    background: rgba(15, 27, 40, 0.9);
+    color: #ffc107;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg) scale(1.08);
+
+    box-shadow:
+        0 0 15px rgba(21, 156, 255, 0.4);
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+body.light-mode {
+    color: #17202a;
+
+    background:
+        linear-gradient(
+            rgba(240, 247, 255, 0.78),
+            rgba(225, 239, 250, 0.88)
+        ),
+        url("images.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* Navigation */
+body.light-mode .navigation {
+    background: rgba(255, 255, 255, 0.88);
+
+    border-bottom:
+        1px solid rgba(21, 120, 190, 0.2);
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Logo text */
+body.light-mode .navigation h5 {
+    color: #071421 !important;
+}
+
+
+/* Navigation links */
+body.light-mode .navigation-link {
+    color: #071421 !important;
+}
+
+body.light-mode .navigation-link:hover {
+    color: var(--blue) !important;
+}
+
+
+/* Cards */
+body.light-mode .leaf {
+    background: rgba(255, 255, 255, 0.88);
+
+    border-color:
+        rgba(21, 120, 190, 0.2);
+
+    color: #071421;
+}
+
+body.light-mode .leaf:hover {
+    background: rgba(255, 255, 255, 0.98);
+
+    border-color:
+        rgba(21, 156, 255, 0.65);
+
+    box-shadow:
+        0 0 25px rgba(21, 156, 255, 0.15),
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Card text */
+body.light-mode .leaf .label {
+    color: #071421;
+}
+
+body.light-mode .leaf .sub {
+    color: #526778;
+}
+
+
+/* Name */
+body.light-mode .name {
+    color: #071421;
+}
+
+
+/* Tagline */
+body.light-mode .tagline {
+    color: #526778;
+}
+
+
+/* Theme button */
+body.light-mode .theme-toggle {
+    background: #ffffff;
+    color: #071421;
+
+    border-color:
+        rgba(21, 120, 190, 0.3);
+}
+
+
+/* Footer */
+body.light-mode footer {
+    color: #526778;
+}
+
+
+/* Smooth theme transition */
+body,
+.navigation,
+.leaf,
+.theme-toggle,
+.navigation-link,
+.name,
+.tagline,
+footer {
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }

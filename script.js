@@ -16,3 +16,36 @@
 document.addEventListener('DOMContentLoaded', () => {
   // No functionality to initialize yet — reserved for future use.
 });
+
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = themeToggle.querySelector("i");
+
+themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+
+        localStorage.setItem("theme", "light");
+
+    } else {
+
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+
+        localStorage.setItem("theme", "dark");
+    }
+});
+
+
+/* Remember user's choice */
+if (localStorage.getItem("theme") === "light") {
+
+    document.body.classList.add("light-mode");
+
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+}
