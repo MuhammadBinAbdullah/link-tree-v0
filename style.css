@@ -1160,9 +1160,6 @@ footer {
     }
 }
 
-/* =========================================================
-   WEBSITE SCROLL EFFECT
-   ========================================================= */
 
 html {
     scroll-behavior: smooth;
@@ -1178,8 +1175,6 @@ body {
     overflow-y: auto;
 }
 
-
-/* Main website area */
 .stage {
     min-height: 100vh;
     height: auto;
@@ -1188,8 +1183,6 @@ body {
     padding-bottom: 100px;
 }
 
-
-/* Smooth card movement while scrolling */
 .leaf {
     transition:
         transform 0.35s ease,
@@ -1198,16 +1191,9 @@ body {
         box-shadow 0.35s ease;
 }
 
-
-/* Hover effect */
 .leaf:hover {
     transform: translateY(-6px) scale(1.01);
 }
-
-
-/* =========================================================
-   CUSTOM SCROLLBAR
-   ========================================================= */
 
 body::-webkit-scrollbar {
     width: 8px;
@@ -1225,10 +1211,6 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
     background: var(--blue-soft);
 }
-
-/* =========================================================
-   DARK / LIGHT MODE
-   ========================================================= */
 
 .theme-toggle {
     width: 40px;
@@ -1260,11 +1242,6 @@ body::-webkit-scrollbar-thumb:hover {
         0 0 15px rgba(21, 156, 255, 0.4);
 }
 
-
-/* =========================================================
-   LIGHT MODE
-   ========================================================= */
-
 body.light-mode {
     color: #17202a;
 
@@ -1280,8 +1257,6 @@ body.light-mode {
     background-attachment: fixed;
 }
 
-
-/* Navigation */
 body.light-mode .navigation {
     background: rgba(255, 255, 255, 0.88);
 
@@ -1292,8 +1267,6 @@ body.light-mode .navigation {
         0 5px 25px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Logo text */
 body.light-mode .navigation h5 {
     color: #071421 !important;
 }
@@ -1308,8 +1281,6 @@ body.light-mode .navigation-link:hover {
     color: var(--blue) !important;
 }
 
-
-/* Cards */
 body.light-mode .leaf {
     background: rgba(255, 255, 255, 0.88);
 
@@ -1330,8 +1301,6 @@ body.light-mode .leaf:hover {
         0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-
-/* Card text */
 body.light-mode .leaf .label {
     color: #071421;
 }
@@ -1340,20 +1309,14 @@ body.light-mode .leaf .sub {
     color: #526778;
 }
 
-
-/* Name */
 body.light-mode .name {
     color: #071421;
 }
 
-
-/* Tagline */
 body.light-mode .tagline {
     color: #526778;
 }
 
-
-/* Theme button */
 body.light-mode .theme-toggle {
     background: #ffffff;
     color: #071421;
@@ -1362,14 +1325,10 @@ body.light-mode .theme-toggle {
         rgba(21, 120, 190, 0.3);
 }
 
-
-/* Footer */
 body.light-mode footer {
     color: #526778;
 }
 
-
-/* Smooth theme transition */
 body,
 .navigation,
 .leaf,
