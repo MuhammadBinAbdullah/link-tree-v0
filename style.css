@@ -877,3 +877,299 @@ footer {
     animation:
         draw 1.8s cubic-bezier(.65,0,.35,1) forwards;
 }
+
+
+/* =========================================================
+   NAVIGATION BAR
+   ========================================================= */
+
+.navigation {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    padding: 18px 40px !important;
+
+    background: rgba(7, 20, 33, 0.88);
+
+    border-bottom: 1px solid rgba(70, 145, 200, 0.25);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   NAVIGATION ROW
+   ========================================================= */
+
+.navigation > .row {
+    margin: 0;
+    align-items: center;
+}
+
+
+/* =========================================================
+   LOGO SECTION
+   ========================================================= */
+
+.navigation .fa-code {
+    color: var(--blue) !important;
+
+    margin-right: 10px;
+    padding-bottom: 0 !important;
+
+    filter:
+        drop-shadow(0 0 6px rgba(21, 156, 255, 0.7));
+
+    transition: 0.3s ease;
+}
+
+
+.navigation .fa-code:hover {
+    transform: scale(1.12) rotate(5deg);
+
+    filter:
+        drop-shadow(0 0 12px rgba(21, 156, 255, 0.9));
+}
+
+
+/* =========================================================
+   CODINGAL TEXT
+   ========================================================= */
+
+.navigation h5 {
+    margin: 0 !important;
+    padding-left: 8px !important;
+
+    color: #ffffff !important;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS AREA
+   ========================================================= */
+
+.navigation > .row > .col-6:last-child {
+    padding-top: 0 !important;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue) transparent;
+}
+
+
+/* Chrome / Edge scrollbar */
+
+.navigation > .row > .col-6:last-child::-webkit-scrollbar {
+    height: 4px;
+}
+
+.navigation > .row > .col-6:last-child::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.navigation > .row > .col-6:last-child::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   LINKS ROW
+   ========================================================= */
+
+.navigation > .row > .col-6:last-child > .row {
+    margin: 0;
+
+    flex-wrap: nowrap;
+
+    min-width: max-content;
+}
+
+
+/* =========================================================
+   LINK COLUMNS
+   ========================================================= */
+
+.navigation .col-3 {
+    width: auto;
+
+    flex: 0 0 auto;
+
+    padding: 0 14px;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
+
+.navigation-link {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 8px 2px;
+
+    color: var(--ivory) !important;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 0.03em;
+
+    text-decoration: none !important;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   LINK UNDERLINE
+   ========================================================= */
+
+.navigation-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--blue);
+
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 8px rgba(21, 156, 255, 0.8);
+
+    transition: width 0.25s ease;
+}
+
+
+/* =========================================================
+   LINK HOVER
+   ========================================================= */
+
+.navigation-link:hover {
+    color: var(--blue) !important;
+
+    transform: translateY(-2px);
+
+    text-shadow:
+        0 0 10px rgba(21, 156, 255, 0.35);
+}
+
+
+.navigation-link:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ACTIVE / CLICK
+   ========================================================= */
+
+.navigation-link:active {
+    transform: translateY(0) scale(0.96);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .navigation {
+        padding: 14px 18px !important;
+    }
+
+    .navigation > .row {
+        flex-wrap: nowrap;
+    }
+
+    .navigation > .row > .col-6:first-child {
+        width: auto;
+        flex: 0 0 auto;
+    }
+
+    .navigation > .row > .col-6:last-child {
+        width: auto;
+        flex: 1 1 auto;
+
+        min-width: 0;
+
+        margin-left: 15px;
+    }
+
+    .navigation h5 {
+        font-size: 16px;
+    }
+
+    .navigation .fa-code {
+        font-size: 22px;
+    }
+
+    .navigation .col-3 {
+        padding: 0 12px;
+    }
+
+    .navigation-link {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .navigation {
+        padding: 12px 14px !important;
+    }
+
+    .navigation h5 {
+        font-size: 14px;
+    }
+
+    .navigation .fa-code {
+        font-size: 20px;
+    }
+
+    .navigation > .row > .col-6:last-child {
+        margin-left: 10px;
+    }
+
+    .navigation .col-3 {
+        padding: 0 10px;
+    }
+}
