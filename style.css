@@ -872,9 +872,9 @@ footer {
     padding: 16px 40px !important;
 
     /* DARK NAVIGATION */
-    background: rgba(3, 12, 22, 0.98) !important;
+    background: rgba(15, 30, 52, 0.98) !important;
 
-    border-bottom: 1px solid rgba(21, 156, 255, 0.25);
+    border-bottom: 1px solid rgba(2, 32, 54, 0.25);
 
     box-shadow:
         0 8px 30px rgba(0, 0, 0, 0.60);
@@ -916,6 +916,29 @@ footer {
         drop-shadow(0 0 14px rgba(56, 189, 248, 1));
 }
 
+/* =========================================================
+   ACTIVE NAVIGATION BUTTON
+   ========================================================= */
+
+.navigation-link.active {
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10, 45, 70, 0.98),
+            rgba(21, 156, 255, 0.45)
+        );
+
+    border-color: #159CFF;
+
+    box-shadow:
+        0 0 18px rgba(21, 156, 255, 0.25),
+        0 5px 18px rgba(0, 0, 0, 0.30);
+
+    text-shadow:
+        0 0 8px rgba(21, 156, 255, 0.35);
+}
 
 /* =========================================================
    WEBSITE NAME
