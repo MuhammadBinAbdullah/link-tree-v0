@@ -49,3 +49,33 @@ if (localStorage.getItem("theme") === "light") {
     themeIcon.classList.remove("fa-sun");
     themeIcon.classList.add("fa-moon");
 }
+
+/* =========================================================
+   ROTATING TEXT
+   ========================================================= */
+
+const rotatingText = document.getElementById("rotatingText");
+
+const roles = [
+    "Front-End Engineer",
+    "Web Developer",
+    "Game Developer",
+    "Graphic Designer"
+];
+
+let roleIndex = 0;
+
+setInterval(() => {
+
+    roleIndex = (roleIndex + 1) % roles.length;
+
+    rotatingText.style.animation = "none";
+
+    void rotatingText.offsetWidth;
+
+    rotatingText.textContent = roles[roleIndex];
+
+    rotatingText.style.animation =
+        "rotatingTextIn 0.6s ease";
+
+}, 2000);

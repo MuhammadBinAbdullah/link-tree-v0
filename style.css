@@ -1368,3 +1368,1165 @@ footer {
         border-color 0.4s ease,
         box-shadow 0.4s ease;
 }
+
+/* =========================================================
+   FLOATING TECH / SKILL BADGES
+   ========================================================= */
+
+.identity {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 70px;
+
+    padding-left: 0;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-badge {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.hero-badge span {
+    padding: 6px 13px;
+
+    border-radius: 20px;
+
+    background: rgba(21, 156, 255, 0.10);
+
+    border: 1px solid rgba(21, 156, 255, 0.30);
+
+    color: #8bdcff;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+}
+
+.hero-content h1 {
+    margin: 0;
+
+    font-family: 'Fraunces', serif;
+
+    font-size: clamp(38px, 5vw, 62px);
+
+    line-height: 1.05;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 25px rgba(21, 156, 255, 0.12);
+}
+
+.hero-content p {
+    margin-top: 18px;
+
+    max-width: 500px;
+
+    color: #91A6B9;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 22px;
+
+    padding: 11px 22px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0878C9,
+            #159CFF
+        );
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 25px rgba(21, 156, 255, 0.20);
+
+    transition: 0.3s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(21, 156, 255, 0.40);
+}
+
+
+/* =========================================================
+   RIGHT IMAGE AREA
+   ========================================================= */
+
+.hero-image {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+
+    flex: 0 0 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+   ========================================================= */
+
+.hero-image .avatar {
+    position: relative;
+
+    z-index: 3;
+
+    width: 190px;
+    height: 190px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   FLOATING BADGES
+   ========================================================= */
+
+.tech-badge {
+    position: absolute;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(5, 18, 30, 0.94);
+
+    border:
+        1px solid rgba(56, 189, 248, 0.35);
+
+    color: #e6f7ff;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.02em;
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        0 0 15px rgba(21, 156, 255, 0.08);
+
+    animation: floatingBadge 4s ease-in-out infinite;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   BADGE ICON
+   ========================================================= */
+
+.badge-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    border-radius: 7px;
+
+    background: rgba(21, 156, 255, 0.12);
+
+    color: #38BDF8;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   BADGE POSITIONS
+   ========================================================= */
+
+.html-badge {
+    top: 15px;
+    left: 5px;
+
+    animation-delay: 0s;
+
+    color: #ffb08a;
+}
+
+.css-badge {
+    top: 55px;
+    right: 0;
+
+    animation-delay: 0.8s;
+
+    color: #72caff;
+}
+
+.js-badge {
+    bottom: 35px;
+    left: 0;
+
+    animation-delay: 1.5s;
+
+    color: #ffe477;
+}
+
+.python-badge {
+    bottom: 15px;
+    right: 5px;
+
+    animation-delay: 2.2s;
+
+    color: #9bdcff;
+}
+
+
+/* =========================================================
+   FLOATING ANIMATION
+   ========================================================= */
+
+@keyframes floatingBadge {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================================
+   BADGE HOVER
+   ========================================================= */
+
+.tech-badge:hover {
+    border-color: #38BDF8;
+
+    box-shadow:
+        0 0 22px rgba(21, 156, 255, 0.30),
+        0 10px 25px rgba(0, 0, 0, 0.35);
+
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .identity {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 55px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-badge {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        width: 270px;
+        height: 270px;
+
+        flex: 0 0 270px;
+    }
+
+    .hero-image .avatar {
+        width: 165px;
+        height: 165px;
+    }
+
+    .tech-badge {
+        padding: 7px 10px;
+
+        font-size: 10px;
+    }
+
+    .badge-icon {
+        width: 23px;
+        height: 23px;
+    }
+
+    .html-badge {
+        left: -5px;
+    }
+
+    .css-badge {
+        right: -5px;
+    }
+
+    .js-badge {
+        left: -5px;
+    }
+
+    .python-badge {
+        right: -5px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .tech-badge {
+        animation: none;
+    }
+}
+
+/* =========================================================
+   PROFILE PICTURE FIX + ANIMATION
+   ========================================================= */
+
+.hero-image .avatar {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    margin: 0;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--blue);
+
+    background: #071421;
+
+    z-index: 10;
+
+    animation:
+        profileFloat 4s ease-in-out infinite,
+        profileGlow 3s ease-in-out infinite alternate;
+}
+
+
+/* IMAGE */
+.hero-image .avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    border-radius: 50%;
+}
+
+
+/* FLOATING */
+@keyframes profileFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* GLOW */
+@keyframes profileGlow {
+
+    0% {
+        box-shadow:
+            0 0 0 4px rgba(21,156,255,0.10),
+            0 0 25px rgba(21,156,255,0.20);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 5px rgba(21,156,255,0.18),
+            0 0 45px rgba(21,156,255,0.45);
+    }
+}
+
+/* =========================================================
+   BADGES IN FRONT OF LOGO
+   ========================================================= */
+
+.hero-image .avatar {
+    position: relative;
+    z-index: 3;
+}
+
+.tech-badge {
+    position: absolute;
+
+    z-index: 20 !important;
+
+    /* badges logo ke uper nazar aayenge */
+}
+
+/* =========================================================
+   BIG RIGHT-SIDE PROFILE PICTURE
+   ========================================================= */
+
+.identity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-image {
+    position: relative;
+
+    width: 430px;
+    height: 430px;
+
+    flex: 0 0 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: -30px;
+}
+
+.hero-image .avatar {
+    width: 300px;
+    height: 300px;
+
+    margin: 0;
+
+    position: relative;
+    z-index: 3;
+}
+
+.hero-image .avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* Badges picture ke aage */
+.tech-badge {
+    z-index: 20 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .identity {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .hero-image {
+        width: 320px;
+        height: 320px;
+
+        flex: 0 0 320px;
+
+        margin: 20px auto 0;
+    }
+
+    .hero-image .avatar {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+
+/* =========================================================
+   FINAL HERO FIX
+   Logo + Badges on RIGHT / Remove Blue Tree Element
+   ========================================================= */
+
+/* REMOVE BLUE TREE ELEMENT */
+#tree-svg {
+    display: none !important;
+}
+
+.trunk-path {
+    display: none !important;
+}
+
+/* MAIN HERO */
+.identity {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 0 !important;
+}
+
+/* LEFT CONTENT */
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* RIGHT LOGO AREA */
+.hero-image {
+    position: relative;
+
+    width: 460px;
+    height: 460px;
+
+    flex: 0 0 460px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: -45px;
+}
+
+/* LOGO */
+.hero-image .avatar {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+
+    margin: 0;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: #071421;
+
+    border: 3px solid var(--blue);
+
+    z-index: 3;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation:
+        profileFloat 4s ease-in-out infinite,
+        profileGlow 3s ease-in-out infinite alternate;
+}
+
+.hero-image .avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 50%;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================================
+   FLOATING BADGES
+   ========================================================= */
+
+.tech-badge {
+    position: absolute;
+
+    z-index: 20 !important;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    background: rgba(5, 18, 30, 0.96);
+
+    border: 1px solid rgba(56, 189, 248, 0.45);
+
+    color: #e6f7ff;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.40),
+        0 0 18px rgba(21, 156, 255, 0.12);
+
+    animation: floatingBadge 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   BADGE POSITIONS
+   ========================================================= */
+
+/* HTML - upper left of logo */
+.html-badge {
+    top: 45px;
+    left: 15px;
+
+    animation-delay: 0s;
+}
+
+/* CSS - upper right */
+.css-badge {
+    top: 85px;
+    right: -5px;
+
+    animation-delay: 0.8s;
+}
+
+/* JavaScript - lower left */
+.js-badge {
+    bottom: 85px;
+    left: -5px;
+
+    animation-delay: 1.5s;
+}
+
+/* Python - lower right */
+.python-badge {
+    bottom: 45px;
+    right: 15px;
+
+    animation-delay: 2.2s;
+}
+
+
+/* =========================================================
+   BADGE ICONS
+   ========================================================= */
+
+.badge-icon {
+    width: 29px;
+    height: 29px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: rgba(21, 156, 255, 0.15);
+
+    color: #38BDF8;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PROFILE ANIMATION
+   ========================================================= */
+
+@keyframes profileFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes profileGlow {
+
+    0% {
+        box-shadow:
+            0 0 0 4px rgba(21,156,255,0.10),
+            0 0 25px rgba(21,156,255,0.20);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 6px rgba(21,156,255,0.18),
+            0 0 50px rgba(21,156,255,0.45);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .identity {
+        flex-direction: column;
+        gap: 45px;
+        padding: 0 !important;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-badge {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        width: 330px;
+        height: 330px;
+
+        flex: 0 0 330px;
+
+        margin: 0 auto;
+    }
+
+    .hero-image .avatar {
+        width: 220px;
+        height: 220px;
+    }
+
+    .html-badge {
+        top: 20px;
+        left: 0;
+    }
+
+    .css-badge {
+        top: 50px;
+        right: 0;
+    }
+
+    .js-badge {
+        bottom: 50px;
+        left: 0;
+    }
+
+    .python-badge {
+        bottom: 20px;
+        right: 0;
+    }
+}
+
+/* =========================================================
+   HERO — TEXT LEFT / LOGO RIGHT
+   ========================================================= */
+
+.stage {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 40px 5vw 100px;
+
+    overflow: visible;
+}
+
+.identity {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    padding: 0 !important;
+}
+
+/* LEFT */
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* RIGHT */
+.hero-image {
+    position: relative;
+
+    width: 480px;
+    height: 480px;
+
+    flex: 0 0 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* LOGO */
+.hero-image .avatar {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+
+    margin: 0;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    z-index: 3;
+
+    border: 3px solid var(--blue);
+
+    background: #071421;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    animation:
+        profileFloat 4s ease-in-out infinite,
+        profileGlow 3s ease-in-out infinite alternate;
+}
+
+.hero-image .avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+/* =========================================================
+   BADGES — IN FRONT OF LOGO
+   ========================================================= */
+
+.tech-badge {
+    position: absolute;
+
+    z-index: 20 !important;
+
+    white-space: nowrap;
+}
+
+
+/* TOP LEFT */
+.html-badge {
+    top: 45px;
+    left: 25px;
+}
+
+
+/* TOP RIGHT */
+.css-badge {
+    top: 80px;
+    right: 0;
+}
+
+
+/* BOTTOM LEFT */
+.js-badge {
+    bottom: 80px;
+    left: 0;
+}
+
+
+/* BOTTOM RIGHT */
+.python-badge {
+    bottom: 40px;
+    right: 25px;
+}
+
+
+/* =========================================================
+   REMOVE BLUE TREE
+   ========================================================= */
+
+#tree-svg,
+.trunk-path {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .stage {
+        min-height: auto;
+
+        padding:
+            40px 20px 100px;
+    }
+
+    .identity {
+        flex-direction: column;
+
+        gap: 45px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 600px;
+
+        text-align: center;
+    }
+
+    .hero-badge {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        width: 340px;
+        height: 340px;
+
+        flex: 0 0 340px;
+
+        margin: 0 auto;
+    }
+
+    .hero-image .avatar {
+        width: 220px;
+        height: 220px;
+    }
+
+    .html-badge {
+        top: 15px;
+        left: 0;
+    }
+
+    .css-badge {
+        top: 45px;
+        right: 0;
+    }
+
+    .js-badge {
+        bottom: 45px;
+        left: 0;
+    }
+
+    .python-badge {
+        bottom: 15px;
+        right: 0;
+    }
+}
+
+/* =========================================================
+   RESTORE BADGE COLORS
+   ========================================================= */
+
+.tech-badge {
+    color: #e6f7ff;
+}
+
+/* HTML */
+.html-badge {
+    color: #ffb08a !important;
+}
+
+/* CSS */
+.css-badge {
+    color: #72caff !important;
+}
+
+/* JavaScript */
+.js-badge {
+    color: #ffe477 !important;
+}
+
+/* Python */
+.python-badge {
+    color: #9bdcff !important;
+}
+
+/* Badge icons */
+.badge-icon {
+    color: #38BDF8;
+    background: rgba(21, 156, 255, 0.15);
+}
+
+/* =========================================================
+   BIGGER ROTATING TEXT
+   ========================================================= */
+
+.rotating-text {
+    margin-top: 12px;
+
+    height: 48px;
+
+    font-size: clamp(24px, 2.5vw, 32px);
+
+    font-weight: 700;
+
+    color: #38BDF8;
+
+    letter-spacing: 0.02em;
+
+    overflow: hidden;
+
+    text-shadow:
+        0 0 10px rgba(56, 189, 248, 0.35),
+        0 0 25px rgba(21, 156, 255, 0.20);
+}
+
+#rotatingText {
+    display: inline-block;
+
+    animation:
+        rotatingTextIn 0.6s ease;
+}
+
+@keyframes rotatingTextIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+    .rotating-text {
+        font-size: 23px;
+        height: 38px;
+    }
+}
