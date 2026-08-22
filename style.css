@@ -4023,3 +4023,128 @@ nav {
     }
 }
 
+/* =========================================
+   SERVICES PAGE - LIGHT MODE
+========================================= */
+
+/* Main Services Section */
+body.light-mode .services,
+body.light .services,
+body.light-theme .services,
+body[data-theme="light"] .services {
+    background: #f5f9ff !important;
+    color: #172337 !important;
+}
+
+/* Services Header */
+body.light-mode .services-header,
+body.light .services-header,
+body.light-theme .services-header,
+body[data-theme="light"] .services-header {
+    color: #172337 !important;
+}
+
+/* My Services */
+body.light-mode .services-header h2,
+body.light .services-header h2,
+body.light-theme .services-header h2,
+body[data-theme="light"] .services-header h2 {
+    color: #172337 !important;
+    opacity: 1 !important;
+}
+
+/* Header Description */
+body.light-mode .services-header p,
+body.light .services-header p,
+body.light-theme .services-header p,
+body[data-theme="light"] .services-header p {
+    color: #526579 !important;
+    opacity: 1 !important;
+}
+
+/* Cards */
+body.light-mode .service-card,
+body.light .service-card,
+body.light-theme .service-card,
+body[data-theme="light"] .service-card {
+    background: #ffffff !important;
+    color: #172337 !important;
+    border-color: #dbe5ef !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Card Titles */
+body.light-mode .service-card h3,
+body.light .service-card h3,
+body.light-theme .service-card h3,
+body[data-theme="light"] .service-card h3 {
+    color: #172337 !important;
+    opacity: 1 !important;
+}
+
+/* Card Description */
+body.light-mode .service-card .service-description,
+body.light .service-card .service-description,
+body.light-theme .service-card .service-description,
+body[data-theme="light"] .service-card .service-description {
+    color: #526579 !important;
+    opacity: 1 !important;
+}
+
+/* WHAT I OFFER */
+body.light-mode .service-card h4,
+body.light .service-card h4,
+body.light-theme .service-card h4,
+body[data-theme="light"] .service-card h4 {
+    color: #16c784 !important;
+    opacity: 1 !important;
+}
+
+/* List */
+body.light-mode .service-list,
+body.light .service-list,
+body.light-theme .service-list,
+body[data-theme="light"] .service-list {
+    color: #526579 !important;
+}
+
+body.light-mode .service-list li,
+body.light .service-list li,
+body.light-theme .service-list li,
+body[data-theme="light"] .service-list li {
+    color: #526579 !important;
+    opacity: 1 !important;
+}
+
+/* Service Icon */
+body.light-mode .service-icon,
+body.light .service-icon,
+body.light-theme .service-icon,
+body[data-theme="light"] .service-icon {
+    color: #000 !important;
+}
+
+/* Get Quote */
+body.light-mode .quote-btn,
+body.light .quote-btn,
+body.light-theme .quote-btn,
+body[data-theme="light"] .quote-btn {
+    background: linear-gradient(135deg, #20d98b, #22b573) !important;
+    color: #000 !important;
+}
+
+/* Quote text */
+body.light-mode .quote-btn span,
+body.light .quote-btn span,
+body.light-theme .quote-btn span,
+body[data-theme="light"] .quote-btn span {
+    color: #000 !important;
+}
+
+/* Section line */
+body.light-mode .section-line,
+body.light .section-line,
+body.light-theme .section-line,
+body[data-theme="light"] .section-line {
+    opacity: 1 !important;
+}

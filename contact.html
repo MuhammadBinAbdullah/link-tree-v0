@@ -17,6 +17,140 @@
     <script src="https://kit.fontawesome.com/149870ccac.js"
             crossorigin="anonymous"></script>
     <title>Code Wth Muhammad</title>
+    <style>#eventForm {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #111827;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#eventForm label {
+    display: block;
+    margin: 15px 0 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#eventForm input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #1e293b;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#eventForm input:focus {
+    border-color: #20d98b;
+    box-shadow: 0 0 0 3px rgba(32,217,139,0.15);
+}
+
+#eventForm input::placeholder {
+    color: #94a3b8;
+}
+
+#eventForm button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #20d98b;
+    color: #000;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#eventForm button:hover {
+    background: #16c784;
+    transform: translateY(-2px);
+}
+
+/* ===== FORM LIGHT MODE ===== */
+
+body.light-mode #eventForm {
+    background: #ffffff;
+    border: 1px solid #dbe5ef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode #eventForm label {
+    color: #172337;
+}
+
+body.light-mode #eventForm input {
+    background: #f8fafc;
+    color: #172337;
+    border: 1px solid #cbd5e1;
+}
+
+body.light-mode #eventForm input::placeholder {
+    color: #64748b;
+}
+
+body.light-mode #eventForm input:focus {
+    background: #ffffff;
+    border-color: #20d98b;
+    box-shadow: 0 0 0 3px rgba(32, 217, 139, 0.15);
+}
+
+body.light-mode #eventForm button {
+    background: #20d98b;
+    color: #000000;
+}
+
+body.light-mode #eventForm button:hover {
+    background: #16c784;
+}
+
+/* LINKS LEFT + FORM RIGHT */
+
+.contact-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* LEFT SIDE */
+.links-section {
+    width: 48%;
+}
+
+.links {
+    width: 100%;
+}
+
+/* RIGHT SIDE */
+#eventForm {
+    width: 48%;
+    max-width: 600px;
+    margin: 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .links-section,
+    #eventForm {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+</style>
 </head>
 <body>
     <div class="container-fluid navigation pt-3">
@@ -43,7 +177,7 @@
                     <div class="col-3">
                         <a
                             href="index.html"
-                            class="text-white navigation-link active">
+                            class="text-white navigation-link ">
                             Home
                         </a>
                     </div>
@@ -58,7 +192,7 @@
 
                     <div class="col-3">
                         <a
-                            href="#services"
+                            href="services.html"
                             class="text-white navigation-link">
                             Services
                         </a>
@@ -66,9 +200,9 @@
 
                     <div class="col-3">
                         <a
-                            href=""
+                            href="contact.html"
                             target="_blank"
-                            class="text-white navigation-link">
+                            class="text-white navigation-link active">
                             Contact
                         </a>
                     </div>
@@ -94,10 +228,14 @@
     </div>
 
 
+<br>
+    <div class="contact-container">
 
-    
-        <div class="divider"></div>
+    <!-- LEFT SIDE LINKS -->
+    <div class="links-section">
         <nav class="links">
+
+        
 
             <!-- INSTAGRAM -->
             <a
@@ -243,14 +381,77 @@
             <span class="sub">Muhammad Bin Abdullah</span>
             </span>
             </a>
-     </nav>
+   
 
+        </nav>
     </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <form id="eventForm">
+
+        <label for="UserName">UserName</label>
+        <input
+            type="text"
+            id="UserName"
+            required
+            minlength="3"
+            placeholder="Enter Your UserName"
+        >
+
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            id="email"
+            required
+            placeholder="Enter Your Email"
+        >
+
+        <label for="message">Message</label>
+        <input
+            type="text"
+            id="message"
+            required
+            placeholder="Enter Your Message"
+        >
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</div>
+        
 
 
     <footer>
         Muhammad — All links in one place
     </footer>
+ <script src="script.js"></script>
 
+ <script>
+    const form = document.getElementById("eventForm");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("UserName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (username.length < 3) {
+        alert("Username must be at least 3 characters.");
+        return;
+    }
+
+    if (!email || !message) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    alert("Message sent successfully! 🚀");
+
+    form.reset();
+});
+
+ </script>
 </body>
 </html>
